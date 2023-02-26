@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <aside class="left-img">
+        </aside>
+
+    <main>
+        <!-- Front and Back Cards -->
+        <div class="card-container">
+            <div id="card-front" class="card">
+                <div id="card-front-content-container">
+                    <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/>
+                            <path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+                    <div>
+                        <h1 id="front-card-numbers">0000 0000 0000 0000</h1>
+                            <div id="name-cvc">
+                                <p id="cardholderName">FirstName LastName</p>
+                                    <p><a id="exp-date-mm">00</a>/<a id="exp-date-yy">00</a></p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                <div id="card-back" class="card">
+                    <p id="card-back-cvc">000</p>
+                </div>
+        </div>
+
+        <form class="form-container">
+            <!-- HTML for Collecting User Information -->
+            <p>CARDHOLDER NAME</p>
+                <input id="card-name"class="input" type="text" value="" placeholder="eg. Bob Smith" onkeyup=getCardHolderName()>
+                <p id="name-error" class="error-msg">Please enter your first and last name</p>
+            <p>CARD NUMBER</p>
+                <input id="card-num" class="input" type="text" value="" placeholder="eg. 1234 5678 9123 0000" onkeyup=getCardNumbers()>
+                <p id="card-error" class="error-msg">Wrong Format, numbers only</p>
+            <div class="mm-yy-cvc-container">
+                <div>
+                    <p>EXP. DATE (MM/YY)</p>
+                        <input id="mm" class="input" type="text" value="" placeholder="MM" onkeyup=getExpDateMonth()>
+                        <input id="yy" class="input" type="text" value="" placeholder="YY" onkeyup=getExpDateYear()>
+                        <p id="mm-yy-error" class="error-msg">...</p>
+                    </div>
+                <div>
+                    <p>CVC</p>
+                        <input id="cvc" class="input" type="text" value="" placeholder="eg. 123" onkeyup=getCVC()>
+                        <p id="cvc-error" class="error-msg">Invalid CVC</p>
+                    </div>
+            
+            </div>
+                <br>
+            <a id="confirm-btn">Confirm</a>
+        </form>
+
+        
+        <div class="thank-you-container">
+            <!-- HTML for Thank You -->
+                <div>
+                    <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs>
+                            <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/>
+                                </linearGradient></defs></svg>
+                </div>
+            <div id="thank-you-text">
+                <h1>THANK YOU!</h1>
+                    <p>We've added your card details</p>
+                </div>
+            <a id="continue-btn">Continue</a>
+        </div>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+</html> 

@@ -1,0 +1,164 @@
+/*TODO Make responsive for mobile*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&family=Ubuntu&display=swap");
+/*Background*/
+body {
+  margin: 0px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.left-img {
+  background: url("public/images/bg-main-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 35%;
+  position: absolute;
+}
+
+/*Main Content*/
+main {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  padding: 0 5%;
+}
+
+/*Cards*/
+.card {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+}
+#card-front-content-container {
+  padding: 2rem;
+}
+#card-front {
+  background: url("public/images/bg-card-front.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 15rem;
+  width: 28rem;
+  right: 2rem;
+}
+#card-back {
+  background: url("public/images/bg-card-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 15rem;
+  width: 28rem;
+  left: 2rem;
+}
+#name-cvc {
+  display: flex;
+  justify-content: space-between;
+}
+#card-back-cvc {
+  color: white;
+  position: relative;
+  left: 22rem;
+  top: 6.9rem;
+}
+
+/*Texboxes*/
+.form-container,
+.thank-you-container {
+  padding: 0 5%;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20%;
+}
+.mm-yy-cvc-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (max-width: 1700px) {
+  .mm-yy-cvc-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+  }
+  #cvc {
+    width: 100%;
+  }
+}
+
+#mm,
+#yy {
+  width: 5rem;
+}
+.input {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+}
+
+/*anchor Button*/
+#confirm-btn,
+#continue-btn {
+  background-color: black;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 0;
+  text-align: center;
+}
+
+/*Error Messages*/
+.error-msg {
+  color: red;
+  font-size: 10px;
+  display: none;
+}
+
+/* Thank You HTML*/
+.thank-you-container {
+  text-align: center;
+  display: none;
+}
+#thank-you-text {
+  margin: 1rem 0 2rem 0;
+  line-height: 25px;
+}
+#thank-you-text h1 {
+  font-weight: 300;
+}
+#thank-you-text p {
+  color: hsl(279, 6%, 55%);
+}
+
+@media (max-width: 870px) {
+  .left-img {
+    height: 50vh;
+    width: 100vh;
+  }
+
+  /*Main Content*/
+  main {
+    flex-direction: column;
+  }
+
+  .card-container {
+    margin-top: 20%;
+  }
+
+  /*Texboxes*/
+  .form-container,
+  .thank-you-container {
+    width: 80%;
+  }
+}
